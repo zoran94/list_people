@@ -5,9 +5,11 @@ class CreateUsers {
         this.lastName = lastName
         this.picture = picture
         this.email = email
-        this.date = date
+        this.date = new Date().toLocaleDateString();
 
     }
+    getFullDate() { }
+
 }
 
 export default CreateUsers;
