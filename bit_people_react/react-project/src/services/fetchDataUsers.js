@@ -10,8 +10,8 @@ const fetchData = () => {
             console.log(data)
             const displayUser = data.results.map(item => {
                 //console.log(item);
-                const { name, picture, email, dob } = item
-                return new CreateUsers(name.first, name.last, picture.medium, email, dob.date)
+                const { name, picture, email, dob, gender } = item
+                return new CreateUsers(name.first, name.last, picture.medium, email, dob.date, gender)
             })
             return displayUser;
         })

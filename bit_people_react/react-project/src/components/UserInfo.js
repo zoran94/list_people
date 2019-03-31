@@ -1,10 +1,15 @@
 import React from "react"
 import formatEmail from "./../services/HiddenEmail"
 
-const UserInfo = (props) => (
 
-    props.users.map((user, i) => (
-        <div className="card" key={i}>
+const UserInfo = (props) => {
+    return  props.users.map((user, i) => {
+        
+        const color = { backgroundColor : user.gender === "female" ? "pink" : ""}
+    
+    return  (
+        <div className="card" key={i} style={color}>
+        
             <div className="card-body">
                 <img src={user.picture} className="" alt="..." />
                 <div className="col-lg-5 offset-1">
@@ -15,8 +20,8 @@ const UserInfo = (props) => (
             </div>
         </div>
     
-    ))
-    )
+    )})
+}
     
 
         
