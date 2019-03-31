@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -45,6 +46,7 @@ h1 {
   text-align: center;
   color: white;
   padding-bottom: 10px;
+  margin-top: 0;
 
 }
 footer {
@@ -57,3 +59,5 @@ footer {
   width: 70%;
   margin: 0 auto;
 }
+
+

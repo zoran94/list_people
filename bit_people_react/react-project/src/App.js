@@ -9,24 +9,24 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       users: [],
     }
   }
-
+  
   componentDidMount() {
     data.fetchData()
-      .then((myUsers) => {
-
-        this.setState({ users: myUsers });
-        // console.log(this.state);
-      })
+    .then((myUsers) => {
+      
+      this.setState({ users: myUsers });
+       
+    })
   }
-
-
+  
+  
   render() {
     const user = this.state.users;
+    
 
     if (!user.length) {
       return (<h2>Loading..</h2>)

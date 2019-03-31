@@ -1,0 +1,15 @@
+.card {
+    width: 100%;
+  }
+  .row:nth-child(n){
+    display: inline-block;
+    
+  }
+  
+  img{
+    height: 300px;
+   
+  }
+  h1 {
+    margin-top: 0;
+  }

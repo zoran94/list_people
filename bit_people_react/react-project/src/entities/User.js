@@ -5,7 +5,7 @@ class CreateUsers {
         this.lastName = lastName
         this.picture = picture
         this.email = email
-        this.date = new Date().toLocaleDateString();
+        this.date = new Date(date).toLocaleDateString();
 
     }
     getFullDate() { }
