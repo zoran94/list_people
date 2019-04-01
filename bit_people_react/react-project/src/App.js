@@ -14,7 +14,7 @@ class App extends Component {
 
     this.state = {
       users: [],
-      listView: false,
+      listView: true,
     }
 
     this.handleClick = this.handleClick.bind(this)
@@ -26,12 +26,29 @@ class App extends Component {
     })
   }
 
+  updateClick =() => {
+    localStorage.setItem("time", JSON.stringify(new Date()))
+    data.fetchData();
+  }
+
+
+
+
+
   componentDidMount() {
     data.fetchData()
       .then((myUsers) => {
         this.setState({ users: myUsers });
+      
       })
+
+      if(localStorage.getItem("listView")) {
+        this.setState({
+          listView: JSON.parse(localStorage.getItem("listView"))
+        })
+      }
   }
+
 
   render() {
     const user = this.state.users;
@@ -39,12 +56,12 @@ class App extends Component {
       return (<h2>Loading..</h2>)
     }
 
-    console.log(this.state.users);
+    
 
     return (
       <>
-        <Header onChangeLayout={this.handleClick} />
-        <Main users={this.state.users} listViewInUse={this.state.listView} />
+        <Header onChangeLayout={this.handleClick}  reload={this.updateClick}/>
+        <Main users={this.state.users}  listViewInUse={this.state.listView} />
         <Footer />
       </>
     );

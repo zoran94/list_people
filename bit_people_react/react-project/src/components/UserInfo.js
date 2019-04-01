@@ -8,7 +8,7 @@ const UserInfo = (props) => {
         //const color = { backgroundColor : user.gender === "female" ? "pink" : ""}
 
         return (
-            <div className="card" >
+            <div className="card newDiv" >
 
                 <div className="card-body">
                     <img src={user.picture} className="" alt="..." />
