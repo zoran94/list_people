@@ -1,12 +1,17 @@
 import React from "react"
 
-const Header = () => {
+const Header = (props) => {
+
+
     return (
         <header>
-            <h1>Bit persons</h1>
-        </header>
 
+            <h2>Bit persons</h2>
+            <button onClick={props.onChangeLayout}>Switch</button>
+
+        </header>
     )
+
 }
 
 export default Header;

@@ -1,6 +1,7 @@
 .card {
     width: 100%;
   }
+  
   .row:nth-child(n){
     display: inline-block;
     

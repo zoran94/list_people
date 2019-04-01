@@ -41,12 +41,17 @@ img {
   border-radius: 50%; 
 }
 
-h1 {
+header {
   background: #ec6f75;
+  display: flex;
+  justify-content: space-between;
+}
+
+  h2 {
   text-align: center;
   color: white;
-  padding-bottom: 10px;
   margin-top: 0;
+  margin-bottom: 0;
 
 }
 footer {
