@@ -13,8 +13,9 @@ class App extends Component {
 
     this.state = {
       users: [],
-      usersSearch: [],
+      usersSearch: "",
       listView: JSON.parse((localStorage.getItem("state"))),
+     
 
     }
     this.handleClick = this.handleClick.bind(this);
@@ -45,7 +46,8 @@ class App extends Component {
       return user.name.includes(inputValue)
     })
     this.setState({
-      usersSearch: filteredUsers
+      usersSearch: filteredUsers,
+      
     });
   }
 

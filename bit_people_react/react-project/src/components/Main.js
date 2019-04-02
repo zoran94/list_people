@@ -3,6 +3,7 @@ import UserInfo from "./UserInfo"
 import UserCard from "./userCardInfo"
 import Loading from "./Load"
 //import Search from "./Search"
+
 const Main = (props) => {
 
     if (!props.users.length) {
