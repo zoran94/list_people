@@ -83,3 +83,7 @@ footer {
 .noSearch{
   color: black;
 }
+
+.hidden {
+  overflow: hidden;
+}

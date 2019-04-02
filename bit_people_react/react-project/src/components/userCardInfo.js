@@ -3,7 +3,11 @@ import formatEmail from "./../services/HiddenEmail"
 import "../userCard.css";
 
 const UserCard = (props) => {
-
+  if (!props.users.length) {
+    return (
+      <h2 className="noSearch">No such user</h2>
+    )
+  }
   return props.users.map(user => {
     const color = { backgroundColor: user.gender === "female" ? "#ffebee" : "" }
 

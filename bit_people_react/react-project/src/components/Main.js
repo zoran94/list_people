@@ -1,22 +1,17 @@
 import React from "react"
 import UserInfo from "./UserInfo"
 import UserCard from "./userCardInfo"
-
-
+import Loading from "./Load"
+//import Search from "./Search"
 const Main = (props) => {
 
-    if (props.listViewInUse === true) {
-        return (
-            <UserInfo users={props.users} />
-        )
-    } else {
-        return (
-            <UserCard users={props.users} />
-        )
+    if (!props.users.length) {
+        return <Loading />;
     }
 
-
-
+    return props.listViewInUse
+        ? <UserInfo users={props.users} />
+        : <UserCard users={props.users} />;
 }
 
 export default Main
