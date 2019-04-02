@@ -66,3 +66,24 @@ footer {
 }
 
 
+.icon {
+  color: white;
+  font-size: 40px;
+  margin-right: 40px;
+  margin-top: 10px;
+  
+}
+
+.searchDiv {
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+.noSearch{
+  color: black;
+}
+
+.hidden {
+  overflow: hidden;
+}

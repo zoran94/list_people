@@ -1,16 +1,21 @@
 import React from "react"
 import formatEmail from "./../services/HiddenEmail"
-
 import "../userCard.css";
 
 const UserCard = (props) => {
-
-  return props.users.map(user => {
+  if (!props.users.length) {
     return (
-     
+      <h2 className="noSearch">No such user</h2>
+    )
+  }
+  return props.users.map(user => {
+    const color = { backgroundColor: user.gender === "female" ? "#ffebee" : "" }
+
+    return (
+
       <div className="row col-4">
         <div className="col s12">
-          <div className="card cardDiv">
+          <div className="card cardDiv" style={color}>
             <div className="card-image">
               <img src={user.picture} className="" alt="" />
               <span className="card-title">{user.name} {user.lastName}</span>
