@@ -7,10 +7,10 @@ const UserCard = (props) => {
 
   return props.users.map(user => {
     return (
-
+     
       <div className="row col-4">
         <div className="col s12">
-          <div className="card">
+          <div className="card cardDiv">
             <div className="card-image">
               <img src={user.picture} className="" alt="" />
               <span className="card-title">{user.name} {user.lastName}</span>
@@ -23,7 +23,7 @@ const UserCard = (props) => {
 
           </div>
         </div>
-      </div >
+      </div>
     )
   })
 }
