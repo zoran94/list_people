@@ -3,13 +3,16 @@ import formatEmail from "./../services/HiddenEmail"
 
 
 const UserInfo = (props) => {
+    if (!props.users.length) {
+        return (
+            <h2 className="noSearch">No such user</h2>
+        )
+    }
     return props.users.map((user, i) => {
-
         const color = { backgroundColor: user.gender === "female" ? "#ffebee" : "" }
 
         return (
             <div className="card newDiv" >
-
                 <div className="card-body" style={color}>
                     <img src={user.picture} className="" alt="..." />
                     <div className="col-lg-5 offset-1">
