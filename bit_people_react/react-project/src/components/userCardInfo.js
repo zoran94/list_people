@@ -1,6 +1,7 @@
 import React from "react"
 import formatEmail from "./../services/HiddenEmail"
 import "../userCard.css";
+import isSensitive from "./../services/caseInsensitive"
 
 const UserCard = (props) => {
   if (!props.users.length) {
@@ -18,7 +19,7 @@ const UserCard = (props) => {
           <div className="card cardDiv" style={color}>
             <div className="card-image">
               <img src={user.picture} className="" alt="" />
-              <span className="card-title">{user.name} {user.lastName}</span>
+              <span className="card-title">{isSensitive(user.name)}{isSensitive(user.lastName)}</span>
             </div>
             <div className="card-content">
               <p>{formatEmail(user.email)}</p>

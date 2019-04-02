@@ -5,7 +5,7 @@ import './App.css';
 import * as data from "./services/fetchDataUsers";
 import Main from "./components/Main";
 import Search from "./components/Search"
-
+import isSensitive from "./services/caseInsensitive"
 class App extends Component {
 
   constructor(props) {
@@ -43,8 +43,9 @@ class App extends Component {
   onSearchInput = (e) => {
     const inputValue = e.target.value;
     const filteredUsers = this.state.users.filter((user) => {
-      return user.name.includes(inputValue)
+      return user.fullName.includes(inputValue)
     })
+    
     this.setState({
       usersSearch: filteredUsers,
       
@@ -62,6 +63,7 @@ class App extends Component {
   }
 
   render() {
+   // console.log(this.state.users)
     return (
       <>
         <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />

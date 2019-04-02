@@ -9,6 +9,7 @@ const Main = (props) => {
     if (!props.users.length) {
         return <Loading />;
     }
+  
 
     return props.listViewInUse
         ? <UserInfo users={props.users} />

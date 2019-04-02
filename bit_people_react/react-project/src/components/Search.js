@@ -4,7 +4,7 @@ const Search = (props) => {
 
     return (
         <div className="searchDiv hidden">
-            <input type="text" className="search" placeholder="search Users" onChange={props.onSearch} />
+            <input type="text" className="search" value={props.inputValue} placeholder="search Users" onChange={props.onSearch} />
         </div>
     )
 
