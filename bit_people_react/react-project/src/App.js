@@ -3,8 +3,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import './App.css';
 import * as data from "./services/fetchDataUsers"
-//import UserInfo from './components/UserInfo';
-//import UserCard from "./components/userCardInfo";
+
 import Main from "./components/Main"
 
 class App extends Component {
