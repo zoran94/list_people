@@ -7,8 +7,12 @@ const Header = (props) => {
         <header>
 
             <h2>Bit persons</h2>
-            <button onClick={props.reload}>Refresh</button>
-            <button onClick={props.onChangeLayout}>Switch</button>
+            <div>
+
+                <i className="fa fa-th icon" onClick={props.onChangeLayout}></i>
+                <i className="fas fa-redo-alt right icon" onClick={props.onReload}></i>
+            </div>
+
 
         </header>
     )
