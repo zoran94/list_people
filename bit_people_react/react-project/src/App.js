@@ -4,9 +4,10 @@ import Footer from "./components/Footer";
 import './App.css';
 import * as data from "./services/fetchDataUsers";
 import Main from "./components/Main";
-import Search from "./components/Search"
-import Loading from "./components/Load"
-import { Switch, Route } from "react-router-dom"
+import Search from "./components/Search";
+import Loading from "./components/Load";
+import About from "./components/About";
+import {Switch, Route, Router} from "react-router-dom";
 
 class App extends Component {
 
@@ -94,10 +95,16 @@ class App extends Component {
 
     return (
       <>
+      
         <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />
         <Search onSearch={this.onSearchInput} />
-        <Main users={this.state.usersSearch} listViewInUse={this.state.listView} />
+         <Switch>
+        <Route exact path="/"  render={()=>(<Main users={this.state.usersSearch} listViewInUse={this.state.listView} />)} /> 
+        <Route exact path="/about" component={About} />
+       </Switch>
         <Footer time={this.updateTime()} />
+       
+       
       </>
     );
   }

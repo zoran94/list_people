@@ -6,7 +6,8 @@ const About = () => {
     return (
 
         <>
-            <h1>About</h1>
+        <div className="about">
+            <h2>About</h2>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt pariatur maxime officia non, sequi accusamus veritatis voluptas beatae quos,
                  exercitationem dolorem laborum unde nemo? Temporibus voluptate ratione modi aliquam consequuntur?
@@ -25,6 +26,7 @@ const About = () => {
           Placeat modi tenetur rem harum aspernatur doloribus amet perferendis necessitatibus. Eveniet dolore
            repudiandae, neque perspiciatis eaque at aliquid? Similique ullam soluta accusantium et, provident
      molestias enim ab corrupti dolor aliquid?</p>
+     </div>
         </>
     )
 
