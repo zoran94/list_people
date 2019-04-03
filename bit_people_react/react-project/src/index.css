@@ -149,3 +149,19 @@ code {
   0%, 39%, 100% { opacity: 0; }
   40% { opacity: 1; } 
 }
+
+
+
+
+
+.failed {
+  height: 820px;
+
+}
+.searched {
+  margin-top: 300px;
+  text-align: center;
+}
+.searched i {
+  font-size: 100px;
+}

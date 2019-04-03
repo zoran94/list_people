@@ -5,7 +5,8 @@ import './App.css';
 import * as data from "./services/fetchDataUsers";
 import Main from "./components/Main";
 import Search from "./components/Search"
-import isSensitive from "./services/caseInsensitive"
+import Loading from "./components/Load"
+
 class App extends Component {
 
   constructor(props) {
@@ -63,7 +64,16 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.users)
+    const users = this.state.users;
+    if (!users.length) {
+      return (
+        <>
+          <Header />
+          <Loading />
+          <Footer />
+        </>
+      )
+    }
     return (
       <>
         <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />

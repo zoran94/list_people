@@ -1,15 +1,13 @@
 import React from "react"
 import UserInfo from "./UserInfo"
 import UserCard from "./userCardInfo"
-import Loading from "./Load"
-//import Search from "./Search"
-
+import FailedSearch from "./failedSearch"
 const Main = (props) => {
 
     if (!props.users.length) {
-        return <Loading />;
+        return <FailedSearch />
     }
-  
+
 
     return props.listViewInUse
         ? <UserInfo users={props.users} />
