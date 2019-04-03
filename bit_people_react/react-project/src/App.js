@@ -6,6 +6,7 @@ import * as data from "./services/fetchDataUsers";
 import Main from "./components/Main";
 import Search from "./components/Search"
 import Loading from "./components/Load"
+import { Switch, Route } from "react-router-dom"
 
 class App extends Component {
 
@@ -55,9 +56,6 @@ class App extends Component {
     if (dif < 60) {
       return "" + dif + " seconds"
     }
-    //this.state.time = newTime;
-
-
 
   }
 

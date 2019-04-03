@@ -6,6 +6,7 @@ const Header = (props) => {
         <header>
 
             <h2>Bit persons</h2>
+            <button>About</button>
             <div>
 
                 <i className="fa fa-th icon" onClick={props.onChangeLayout}></i>
