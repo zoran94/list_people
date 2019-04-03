@@ -12,13 +12,15 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    const cachedUsers = JSON.parse(localStorage.getItem('save'));
+
     this.state = {
-      users: [],
-      usersSearch: "",
+      users: cachedUsers || [],
+      usersSearch: cachedUsers || [],
       listView: JSON.parse((localStorage.getItem("state"))),
-
-
+      time: parseInt(new Date().getTime() / 1000).toFixed(0),
     }
+
     this.handleClick = this.handleClick.bind(this);
     this.reloadClick = this.reloadClick.bind(this)
   }
@@ -31,14 +33,8 @@ class App extends Component {
   }
 
   reloadClick() {
-    data.fetchData()
-      .then((myUsers) => {
-        this.setState({
-          users: myUsers,
-          usersSearch: myUsers,
-        });
-      })
-
+    this.fetchUsers();
+    this.updateTime();
   }
 
   onSearchInput = (e) => {
@@ -49,22 +45,45 @@ class App extends Component {
 
     this.setState({
       usersSearch: filteredUsers,
-
     });
   }
 
+  updateTime = () => {
+    const newTime = parseInt(new Date().getTime() / 1000).toFixed(0);
+    const dif = newTime - this.state.time;
+    this.state.time = newTime
+    if (dif < 60) {
+      return "" + dif + " seconds"
+    }
+    //this.state.time = newTime;
+
+
+
+  }
+
   componentDidMount() {
+    if (this.state.users.length) {
+      return;
+    }
+    this.fetchUsers();
+  }
+
+  fetchUsers = () => {
     data.fetchData()
       .then((myUsers) => {
         this.setState({
           users: myUsers,
-          usersSearch: myUsers
+          usersSearch: myUsers,
         });
+        localStorage.setItem("save", JSON.stringify(myUsers))
+        this.updateTime();
       })
   }
 
   render() {
+
     const users = this.state.users;
+    //console.log(users);
     if (!users.length) {
       return (
         <>
@@ -74,12 +93,13 @@ class App extends Component {
         </>
       )
     }
+
     return (
       <>
         <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />
         <Search onSearch={this.onSearchInput} />
         <Main users={this.state.usersSearch} listViewInUse={this.state.listView} />
-        <Footer />
+        <Footer time={this.updateTime()} />
       </>
     );
   }
