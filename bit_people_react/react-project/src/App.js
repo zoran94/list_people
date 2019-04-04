@@ -4,10 +4,17 @@ import Footer from "./components/Footer";
 import './App.css';
 import * as data from "./services/fetchDataUsers";
 import Main from "./components/Main";
+<<<<<<< HEAD
 import Search from "./components/Search"
 import Loading from "./components/Load"
 import About from "./components/About"
 import { Switch, Route } from "react-router-dom"
+=======
+import Search from "./components/Search";
+import Loading from "./components/Load";
+import About from "./components/About";
+import {Switch, Route, Router} from "react-router-dom";
+>>>>>>> 9eea0c82a5c2205048243d68a850979c0f0b9a9f
 
 class App extends Component {
 
@@ -95,6 +102,7 @@ class App extends Component {
 
     return (
       <>
+<<<<<<< HEAD
 
         <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />
         <Search onSearch={this.onSearchInput} />
@@ -103,7 +111,18 @@ class App extends Component {
           } />
           <Route exact path="/about" component={About} />
         </Switch>
+=======
+      
+        <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />
+        <Search onSearch={this.onSearchInput} />
+         <Switch>
+        <Route exact path="/"  render={()=>(<Main users={this.state.usersSearch} listViewInUse={this.state.listView} />)} /> 
+        <Route exact path="/about" component={About} />
+       </Switch>
+>>>>>>> 9eea0c82a5c2205048243d68a850979c0f0b9a9f
         <Footer time={this.updateTime()} />
+       
+       
       </>
     );
   }

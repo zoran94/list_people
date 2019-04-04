@@ -165,3 +165,19 @@ code {
 .searched i {
   font-size: 100px;
 }
+
+.about {
+  height: 600px;
+  padding: 40px
+}
+.about p {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 40px;
+  font-weight: bold;
+}
+.about h2 {
+  text-align: center;
+  color:black;
+}
