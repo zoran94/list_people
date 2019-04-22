@@ -151,9 +151,6 @@ code {
 }
 
 
-
-
-
 .failed {
   height: 820px;
 
@@ -177,7 +174,8 @@ code {
   padding: 40px;
   font-weight: bold;
 }
-.about h2 {
-  text-align: center;
-  color:black;
+
+
+.aboutP {
+  margin-top: 15px
 }

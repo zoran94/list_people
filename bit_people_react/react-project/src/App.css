@@ -43,8 +43,10 @@ img {
 
 header {
   background: #ec6f75;
-  display: flex;
-  justify-content: space-between;
+  
+}
+.userSearch {
+  display: inline-block;
 }
 
   h2 {
@@ -68,9 +70,8 @@ footer {
 
 .icon {
   color: white;
-  font-size: 40px;
-  margin-right: 40px;
-  margin-top: 10px;
+  font-size: 30px;
+  
   
 }
 
@@ -88,3 +89,23 @@ footer {
   overflow: hidden;
 }
 
+
+
+.headerSide {
+  display: flex;
+    justify-content: space-around;
+}
+
+.right {
+  display: -webkit-inline-box;
+  height:50px;
+}
+li {
+  margin-right: 15px;
+  margin-top: 10px;
+
+}
+
+.lista {
+  padding-top: 10px;
+}

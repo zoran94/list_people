@@ -92,7 +92,7 @@ class App extends Component {
         </>
       )
     }
-
+    
     return (
       <>
       
@@ -100,7 +100,7 @@ class App extends Component {
         <Search onSearch={this.onSearchInput} />
          <Switch>
         <Route exact path="/"  render={()=>(<Main users={this.state.usersSearch} listViewInUse={this.state.listView} />)} /> 
-        <Route exact path="/about" component={About} />
+      <Route exact path="/about" component={About} />
        </Switch>
         <Footer time={this.updateTime()} />
        

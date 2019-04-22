@@ -2,12 +2,17 @@ import React from "react"
 
 
 const About = () => {
-
+    const $getSearch = document.querySelector(".searchDiv");
+    
+    console.log($getSearch);
+        
+     //getSearch.style.visibility = "hidden"
+  
     return (
 
         <>
         <div className="about">
-            <h2>About</h2>
+            <h2 className="text-dark">About</h2>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt pariatur maxime officia non, sequi accusamus veritatis voluptas beatae quos,
                  exercitationem dolorem laborum unde nemo? Temporibus voluptate ratione modi aliquam consequuntur?
@@ -17,7 +22,7 @@ const About = () => {
      repudiandae, neque perspiciatis eaque at aliquid? Similique ullam soluta accusantium et, provident
       molestias enim ab corrupti dolor aliquid?</p>
 
-            <h2>What we do</h2>
+            <h3 className="text-dark center">What we do</h3>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt pariatur maxime officia non, sequi accusamus veritatis voluptas beatae quos,
                  exercitationem dolorem laborum unde nemo? Temporibus voluptate ratione modi aliquam consequuntur?
