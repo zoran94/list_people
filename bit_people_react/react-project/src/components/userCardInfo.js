@@ -9,14 +9,17 @@ const UserCard = (props) => {
       <h2 className="noSearch">No such user</h2>
     )
   }
-  return props.users.map(user => {
+  
+  return (
+    <div className="clearfix maindDiv">
+    {props.countGender()}
+    {props.users.map((user, index) => {
     const color = { backgroundColor: user.gender === "female" ? "#ffebee" : "" }
 
     return (
-
-      <div className="row col-4">
-        <div className="col s12">
-          <div className="card cardDiv" style={color}>
+      <div className="cards" key={index}>
+        <div className="">
+          <div className="card" style={color}>
             <div className="card-image">
               <img src={user.picture} className="" alt="" />
               <span className="card-title">{isSensitive(user.name)}{isSensitive(user.lastName)}</span>
@@ -31,7 +34,9 @@ const UserCard = (props) => {
         </div>
       </div>
     )
-  })
+  })}
+  </div>
+  )
 }
 
 

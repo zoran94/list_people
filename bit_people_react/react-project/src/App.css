@@ -33,7 +33,6 @@
   }
 }
 
-
 img {
   height:50px;
 
@@ -54,13 +53,16 @@ header {
   color: white;
   margin-top: 0;
   margin-bottom: 0;
+  
 
 }
+
 footer {
   background: #ec6f75;
   text-align: center;
   color: white;
-  
+  height: 70px;
+  padding-top: 10px;  
 }
  .newDiv {
   width: 70%;
@@ -108,4 +110,24 @@ li {
 
 .lista {
   padding-top: 10px;
+}
+a:hover {
+  text-decoration:none; 
+}
+
+.clearfix::before, .clearfix::after{
+  content: "";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+
+.cards {
+  
+    width: 20%;
+   float: left;
+   margin: 80px;
+   margin-left: 110px
+  
 }

@@ -4,8 +4,7 @@ const Footer = (props) => {
     return (
         <footer className="position-sticky">
             <span>&copy; 2018 Copyright BIT</span>
-
-            <p>Last update: {props.time}</p>
+            <p>Last update: {props.timeVisited}</p>
         </footer>
     )
 }

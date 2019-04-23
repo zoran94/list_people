@@ -164,7 +164,7 @@ code {
 }
 
 .about {
-  height: 600px;
+  height:100%;
   padding: 40px
 }
 .about p {
@@ -178,4 +178,9 @@ code {
 
 .aboutP {
   margin-top: 15px
+}
+
+.counter {
+  text-align: right;
+    margin-right:80px;
 }

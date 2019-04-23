@@ -4,7 +4,6 @@ import Footer from "./components/Footer";
 import './App.css';
 import * as data from "./services/fetchDataUsers";
 import Main from "./components/Main";
-import Search from "./components/Search";
 import Loading from "./components/Load";
 import About from "./components/About";
 import {Switch, Route, Router} from "react-router-dom";
@@ -20,7 +19,6 @@ class App extends Component {
       users: cachedUsers || [],
       usersSearch: cachedUsers || [],
       listView: JSON.parse((localStorage.getItem("state"))),
-      time: parseInt(new Date().getTime() / 1000).toFixed(0),
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -50,15 +48,27 @@ class App extends Component {
     });
   }
 
-  updateTime = () => {
-    const newTime = parseInt(new Date().getTime() / 1000).toFixed(0);
-    const dif = newTime - this.state.time;
-    this.state.time = newTime
-    if (dif < 60) {
-      return "" + dif + " seconds"
-    }
+  updateTime = (e) => {
+    localStorage.setItem("time", JSON.stringify(new Date()))
+  
+  }
+
+  timeVisited = ()=>{
+     Math.abs(JSON.parse(localStorage.getItem("time")) - new Date());
 
   }
+
+  countGender = () => {
+    var male = 0;
+    var female =0;
+      this.state.users.map(user => {
+      user.gender === "female" ? female++: male++
+  
+    })
+   return <p className="counter"><b>Male: </b>{male} <b>Female: </b>{female}</p>
+  }
+
+
 
   componentDidMount() {
     if (this.state.users.length) {
@@ -80,9 +90,7 @@ class App extends Component {
   }
 
   render() {
-
     const users = this.state.users;
-    //console.log(users);
     if (!users.length) {
       return (
         <>
@@ -98,10 +106,10 @@ class App extends Component {
       
         <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />
         <Switch>
-          <Route exact path="/"  render={()=>(<Main users={this.state.usersSearch} onSearchInput={this.onSearchInput} listViewInUse={this.state.listView} />)} /> 
+          <Route exact path="/"  render={()=>(<Main countGender={this.countGender}  users={this.state.usersSearch} onSearchInput={this.onSearchInput} listViewInUse={this.state.listView} />)} /> 
           <Route exact path="/about" component={About} />
         </Switch>
-        <Footer time={this.updateTime()} />
+        <Footer />
       </>
     );
   }

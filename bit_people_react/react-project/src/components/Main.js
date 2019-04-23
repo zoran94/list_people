@@ -19,8 +19,8 @@ const Main = (props) => {
     return (<>
             <Search onSearch={props.onSearchInput} />
      {props.listViewInUse
-        ? <UserInfo users={props.users} />
-        : <UserCard users={props.users} />}
+        ? <UserInfo users={props.users} countGender={props.countGender}/>
+        : <UserCard users={props.users} countGender={props.countGender}/>}
         </>
 )
 }
