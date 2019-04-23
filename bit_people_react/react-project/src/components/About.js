@@ -2,12 +2,6 @@ import React from "react"
 
 
 const About = () => {
-    const $getSearch = document.querySelector(".searchDiv");
-    
-    console.log($getSearch);
-        
-     //getSearch.style.visibility = "hidden"
-  
     return (
 
         <>

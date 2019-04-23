@@ -97,14 +97,11 @@ class App extends Component {
       <>
       
         <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />
-        <Search onSearch={this.onSearchInput} />
-         <Switch>
-        <Route exact path="/"  render={()=>(<Main users={this.state.usersSearch} listViewInUse={this.state.listView} />)} /> 
-      <Route exact path="/about" component={About} />
-       </Switch>
+        <Switch>
+          <Route exact path="/"  render={()=>(<Main users={this.state.usersSearch} onSearchInput={this.onSearchInput} listViewInUse={this.state.listView} />)} /> 
+          <Route exact path="/about" component={About} />
+        </Switch>
         <Footer time={this.updateTime()} />
-       
-       
       </>
     );
   }
