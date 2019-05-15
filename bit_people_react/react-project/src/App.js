@@ -104,7 +104,7 @@ class App extends Component {
     return (
       <>
       
-        <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} />
+        <Header onChangeLayout={this.handleClick} onReload={this.reloadClick} listView={this.state.listView}/>
         <Switch>
           <Route exact path="/"  render={()=>(<Main countGender={this.countGender}  users={this.state.usersSearch} onSearchInput={this.onSearchInput} listViewInUse={this.state.listView} />)} /> 
           <Route exact path="/about" component={About} />
