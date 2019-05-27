@@ -2,9 +2,9 @@ import React from "react"
 
 const Footer = (props) => {
     return (
-        <footer className="position-sticky">
+        <footer className="position-sticky page-footer">
             <span>&copy; 2018 Copyright BIT</span>
-            <p>Last update: {props.timeVisited}</p>
+            <p> {props.updateTime()}</p>
         </footer>
     )
 }

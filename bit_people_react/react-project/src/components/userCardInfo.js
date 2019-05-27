@@ -11,7 +11,7 @@ const UserCard = (props) => {
   }
   
   return (
-    <div className="clearfix maindDiv">
+    <div className="clearfix maindDiv heigh">
     {props.countGender()}
     {props.users.map((user, index) => {
     const color = { backgroundColor: user.gender === "female" ? "#ffebee" : "" }

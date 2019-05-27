@@ -19,6 +19,7 @@ class App extends Component {
       users: cachedUsers || [],
       usersSearch: cachedUsers || [],
       listView: JSON.parse((localStorage.getItem("state"))),
+      time: localStorage.setItem("time", Date.now())
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -34,7 +35,7 @@ class App extends Component {
 
   reloadClick() {
     this.fetchUsers();
-    this.updateTime();
+    this.updateTime()
   }
 
   onSearchInput = (e) => {
@@ -49,20 +50,31 @@ class App extends Component {
   }
 
   updateTime = (e) => {
-    localStorage.setItem("time", JSON.stringify(new Date()))
-  
+    let lastUpdate = localStorage.getItem("time");
+    let nowTime = Date.now();
+    let pastTime = nowTime - lastUpdate;
+
+    let sec, min, hour;
+    sec = Math.floor(pastTime/1000);
+    min = Math.floor(sec/60);
+    hour = Math.floor(min/24);
+
+    if(sec >= 0 && sec <= 60){
+      return `Last update: ${sec} seconds ago`
+    }else if(min > 0 && min <= 60){
+      return `Last update: ${min} minutes ago`
+    }else if(hour > 0 && hour <= 1){
+      return `Last update: ${hour} hours ago `
+    }
   }
 
-  timeVisited = ()=>{
-     Math.abs(JSON.parse(localStorage.getItem("time")) - new Date());
-
-  }
+ 
 
   countGender = () => {
     var male = 0;
     var female =0;
       this.state.users.map(user => {
-      user.gender === "female" ? female++: male++
+      user.gender === "female" ? female++ : male++
   
     })
    return <p className="counter"><b>Male: </b>{male} <b>Female: </b>{female}</p>
@@ -109,7 +121,7 @@ class App extends Component {
           <Route exact path="/"  render={()=>(<Main countGender={this.countGender}  users={this.state.usersSearch} onSearchInput={this.onSearchInput} listViewInUse={this.state.listView} />)} /> 
           <Route exact path="/about" component={About} />
         </Switch>
-        <Footer />
+        <Footer updateTime={this.updateTime}/>
       </>
     );
   }

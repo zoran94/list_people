@@ -10,7 +10,7 @@ const FailedSearch = () => {
                     <i className="far fa-angry noSearch"></i>
                     <h3>We couldn't find any people
                         matching your search</h3>
-                </ div>
+                </div>
             </div>
         </>
     )

@@ -3,7 +3,7 @@ import isSensitive from "./../services/caseInsensitive"
 
 const UserInfo = (props) => {
     return (
-        <div>
+        <div className="heigh">
         {props.countGender()}
        
     
