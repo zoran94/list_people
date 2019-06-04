@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/zoran94/Bit_people/master/bit_people_react/react-project/assets/user.jpg" width="100%" height="500px"</img> 
+    <img src="https://raw.githubusercontent.com/zoran94/Bit_people/master/assets/user.jpg" width="100%" height="500px"</img> 
 </div>
 
 
