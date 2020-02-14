@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3>Type npm install to install dependencies and after that type npm start to run the app</h3>
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/zoran94/Bit_people/master/assets/user.jpg" width="100%" height="500px"</img> 
